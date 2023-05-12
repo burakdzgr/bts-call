@@ -114,6 +114,9 @@ const getColumnSlotName = (column) => {
                                     <slot v-else :name="column.value">
                                         {{ row[column.value] }}
                                     </slot>
+                                    <slot v-if="column.value === 'delayedPayment'">
+                                        {{ Math.floor(Math.random() * 60) + " gün" }}
+                                    </slot>
                                 </td>
                                 <!-- Eğer updateButtonVisible prop'u true ise Edit butonunu ekle -->
                                 <td
